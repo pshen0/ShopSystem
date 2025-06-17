@@ -12,8 +12,8 @@
 
 - **API Gateway**  
   Отвечает за маршрутизацию запросов:
-  - `/orders/{*}` → Orders Service  
-  - `/accounts/{*}` → Payments Service
+  - Orders Service  
+  - Payments Service
 
 - **Order Service (`Orders.Api`)**  
   Отвечает за создание и отслеживание заказов.
@@ -63,8 +63,6 @@
 - `orders-api` (порт `8080`)
 - `payments-api` (порт `8081`)
 - `gateway` (порт `8000`)
-
-> Все сервисы имеют `health check` по эндпоинту `/healthz`.
 
 ### Команда запуска
 
