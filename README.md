@@ -29,11 +29,6 @@
   - `Domain`
   - `Infrastructure`
 
-- **RabbitMQ**  
-  Используется как брокер сообщений. Задействованы очереди:
-  - `orders.events`
-  - `payments.events`
-
 - **PostgreSQL**  
   Отдельные базы данных:
   - `orders`
@@ -41,25 +36,6 @@
   Миграции выполняются автоматически при запуске контейнеров.
 
 ---
-
-## Функциональные возможности
-
-### Orders Service
-
-- `POST /orders` — создать заказ (и отправить событие в очередь)
-- `GET /orders` — получить список заказов
-- `GET /orders/{id}` — получить статус заказа
-
-### Payments Service
-
-- `POST /accounts` — создать счёт (один на пользователя)
-- `POST /accounts/{id}/top-up` — пополнить счёт
-- `GET /accounts/{id}` — получить текущий баланс
-
-> Все контроллеры используют MediatR, работают с DTO и возвращают корректные HTTP-статусы.
-
----
-
 ## Архитектурные подходы
 
 - **Transactional Outbox (Orders Service)**  
@@ -77,16 +53,6 @@
 ---
 
 ## Swagger
-
-### Orders Service
-- [Swagger UI](http://localhost:8080/swagger/index.html)
-- [OpenAPI JSON](http://localhost:8080/swagger/v1/swagger.json)
-
-### Payments Service
-- [Swagger UI](http://localhost:8081/swagger/index.html)
-- [OpenAPI JSON](http://localhost:8081/swagger/v1/swagger.json)
-
----
 
 ## Запуск с Docker
 
